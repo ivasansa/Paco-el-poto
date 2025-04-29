@@ -21,3 +21,5 @@ def getHumedad():
 	percentage_raw_adc = ((raw_adc - ZERO_PERCENT) * 100) / (HUNDRED_PERCENT - ZERO_PERCENT)
 
 	return int(percentage_raw_adc)
+
+print(getHumedad())
