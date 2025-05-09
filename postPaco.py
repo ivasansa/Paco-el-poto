@@ -1,6 +1,6 @@
-import requests, humedad
+import requests, humedad2 as humedad
 
-valorHumedad = humedad.getHumedad()
+valorHumedad = humedad.getHumedad(0)
 url = 'http://raspberrypi.local:60221/humidity'
 myobj = {
     "id": "aaaa1111",
@@ -9,4 +9,10 @@ myobj = {
 
 x = requests.post(url, json = myobj)
 
-print(x.text)
+valorHumedad = humedad.getHumedad(1)
+myobj = {
+    "id": "aaaa2222",
+    "value": valorHumedad
+}
+
+x = requests.post(url, json = myobj)
